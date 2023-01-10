@@ -1,7 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-// import axios from 'axios';
-
 const PRODUCT_API_URL = 'https://fakestoreapi.com/products';
 
 const initialState = {
@@ -17,29 +15,6 @@ export const getProductsData = createAsyncThunk(
     const res = await fetch(PRODUCT_API_URL);
     const data = await res.json();
     return data;
-    // const newProductsArray = [];
-
-    // // data.forEach((product) => {
-    // //   const {
-    // //     id,
-    // //     title,
-    // //     description,
-    // //     image,
-    // //     category,
-    // //     price,
-    // //   } = product;
-    // //   const newProduct = {
-    // //     id,
-    // //     title,
-    // //     desc: description,
-    // //     image,
-    // //     category,
-    // //     price,
-    // //   };
-    // //   newProductsArray.push(newProduct);
-    // // });
-    // // // console.log(newProductsArray);
-    // // return newProductsArray;
   },
 );
 
