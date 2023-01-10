@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => (
   <div className="m-8">
     <nav className="flex justify-between items-center">
-      <NavLink to="/">Home</NavLink>
+      <NavLink to="/">SHOP</NavLink>
       <form className="w-4/5">
         <label
           htmlFor="default-search"
