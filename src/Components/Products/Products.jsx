@@ -22,12 +22,6 @@ const Products = ({ products }) => {
           </div>
         </div>
       </form>
-
-      {/* <h3 className="m-4">
-        Total Stocks:
-        {' '}
-        {products.length}
-      </h3> */}
       <div className="grid grid-cols-2">
         {products && products.map((product) => (
           <div key={product.id} className="basis-1/4 flex justify-center flex-col text-center items-center p-2 cursor-pointer hover:border border-gray-700">
