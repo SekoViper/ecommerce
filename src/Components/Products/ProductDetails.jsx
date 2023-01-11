@@ -8,7 +8,7 @@ const ProductDetails = () => {
   return (
     <div className="mx-5">
       <div>
-        <NavLink to="/">Back</NavLink>
+        <NavLink to="/"> Back </NavLink>
       </div>
       <div className="lg:flex p-5">
         <div>
