@@ -1,23 +1,18 @@
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { searchProduct } from '../../Redux/ProductSlice';
 
 const Products = ({ products }) => {
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className="mx-5">
       <form className="w-full">
-        <label
-          htmlFor="default-search"
-          className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
-        >
-          Search
-        </label>
         <div className="relative">
           <input
             type="search"
             id="default-search"
-            className="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-full border border-gray-300 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
+            className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-full border border-gray-300 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
             placeholder="Search..."
             required
             onChange={(e) => { dispatch(searchProduct(e.target.value)); }}
@@ -57,6 +52,17 @@ const Products = ({ products }) => {
       </div>
     </div>
   );
+};
+
+Products.defaultProps = { products: null };
+Products.propTypes = {
+  products: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    length: PropTypes.number,
+    map: PropTypes.string,
+  }),
 };
 
 export default Products;

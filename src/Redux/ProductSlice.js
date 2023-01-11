@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const PRODUCT_API_URL = 'https://fakestoreapi.com/products';
