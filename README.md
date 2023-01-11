@@ -48,7 +48,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](shop-comer.netlify.app)
+<p align="right">(<a href="shop-comer.netlify.app">Live demo</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,7 +95,7 @@ npm test
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="author"></a>
 
 👤 **Seko Viper**
 
