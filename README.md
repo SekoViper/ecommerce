@@ -44,9 +44,6 @@
 - Showing products from an api
 - Showing details of a product
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
 <a href="shop-comer.netlify.app">Live demo</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
