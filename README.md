@@ -47,8 +47,7 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-<p align="left">(<a href="shop-comer.netlify.app">Live demo</a>)</p>
+<a href="shop-comer.netlify.app">Live demo</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
