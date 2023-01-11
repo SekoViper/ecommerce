@@ -7,7 +7,12 @@ const Header = () => {
     <div className="m-8">
       <nav className="flex justify-between items-center">
         <NavLink to="/">SHOP</NavLink>
-        <NavLink to="/Jewelery">Jewelries</NavLink>
+        <div className="flex gap-4">
+          <NavLink to="/Jewelery">Jewelries</NavLink>
+          <NavLink to="/men">Men</NavLink>
+          <NavLink to="/Women">Women</NavLink>
+          <NavLink to="/Electronics">Electronics</NavLink>
+        </div>
       </nav>
     </div>
   );
