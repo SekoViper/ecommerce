@@ -6,7 +6,7 @@ const ProductDetails = () => {
   const product = location.state;
 
   return (
-    <>
+    <div className="mx-5">
       <div>
         <NavLink to="/">Back</NavLink>
       </div>
@@ -28,7 +28,7 @@ const ProductDetails = () => {
         </div>
       </div>
 
-    </>
+    </div>
   );
 };
 
