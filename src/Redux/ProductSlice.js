@@ -4,6 +4,7 @@ const PRODUCT_API_URL = 'https://fakestoreapi.com/products';
 
 const initialState = {
   products: [],
+  filteredProduct: [],
   status: 'idle',
   error: null,
 };
@@ -24,9 +25,12 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     // standard reducer logic, with auto-generated action types per reducer
-    addProduct: (state, action) => {
-      console.log('Action creator', state, action);
-    },
+    searchProduct: (state, action) => ({
+      ...state,
+      filteredProduct: state.products.filter(
+        (product) => product.title.toLowerCase().includes(action.payload),
+      ),
+    }),
   },
 
   extraReducers(builder) {
@@ -37,6 +41,7 @@ export const productSlice = createSlice({
       .addCase(getProductsData.fulfilled, (state, action) => {
         state.status = 'Succeeded';
         state.products = [...action.payload];
+        state.filteredProduct = [...action.payload];
       })
       .addCase(getProductsData.rejected, (state, action) => {
         state.status = 'Failed';
@@ -44,5 +49,7 @@ export const productSlice = createSlice({
       });
   },
 });
+
+export const { searchProduct } = productSlice.actions;
 
 export default productSlice.reducer;
