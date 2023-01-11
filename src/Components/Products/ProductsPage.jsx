@@ -15,7 +15,7 @@ const ProductsPage = () => {
     }
   }, [dispatch, products.products.length], products.products.length);
   return (
-    products.status === 'Loading' ? <h2>Loading</h2> : <Products products={products.products} key={products.id} />
+    products.status === 'Loading' ? <h2>Loading</h2> : <Products products={products.filteredProduct} key={products.filteredProduct.id} />
   );
 };
 
