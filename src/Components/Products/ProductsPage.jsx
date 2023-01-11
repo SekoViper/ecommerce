@@ -7,7 +7,7 @@ const ProductsPage = () => {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
-  console.log('Products page', products.products);
+  // console.log('Products page', products.products);
 
   useEffect(() => {
     if (products.products.length === 0) {
