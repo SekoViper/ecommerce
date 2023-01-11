@@ -4,11 +4,11 @@ import { useLocation } from 'react-router-dom';
 const ProductDetails = () => {
   const location = useLocation();
   const product = location.state;
-  console.log('Product quantity', product.length);
+
   return (
     <div className="lg:flex p-5">
       <div>
-        <img src={product.image} alt={product.title} srcSet="" className="" />
+        <img src={product.image} alt={product.title} />
       </div>
       <div>
         <h2 className="font-extrabold text-xl my-4">{product.title}</h2>
