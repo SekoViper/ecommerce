@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { FcPrevious } from 'react-icons/fc';
 
 const ProductDetails = () => {
   const location = useLocation();
@@ -8,7 +9,11 @@ const ProductDetails = () => {
   return (
     <div className="mx-5">
       <div>
-        <NavLink to="/"> Back </NavLink>
+        <NavLink to="/">
+          {' '}
+          <FcPrevious />
+          {' '}
+        </NavLink>
       </div>
       <div className="lg:flex p-5">
         <div>
