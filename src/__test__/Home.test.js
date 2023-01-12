@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import { useSelector } from 'react-redux';
 import Products from '../Components/Products/Products';
 import ProductsPage from '../Components/Products/ProductsPage';
+import store from '../Redux/configureStore';
 
 jest.mock('react-redux');
 jest.mock('react-router-dom');
@@ -11,7 +12,7 @@ describe('Test Home component rendering', () => {
     jest.clearAllMocks();
   });
 
-  test('Test product component rendering on homepage', () => {
+  test('Test product rendering on homepage', () => {
     useSelector.mockReturnValue({
       products: [
         {
@@ -51,5 +52,10 @@ describe('Test Home component rendering', () => {
     });
     const tree = render(<ProductsPage />);
     expect(tree).toMatchSnapshot();
+  });
+
+  test('Should initially set products to an empty array', () => {
+    const state = store.getState().products;
+    expect(state.products).toEqual([]);
   });
 });

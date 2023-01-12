@@ -219,8 +219,9 @@ Give a ⭐️ If you like this project...
 
 <!-- > Give credit to everyone who inspired your codebase. -->
 
-- I would like to thank Microverse for the project inspiration.
-- I would also like to thank Nelson Sakwa for the original design idea.
+- I would like to thank <a href="https://github.com/microverseinc/curriculum-professional-skills/blob/main/interview-prep/create-first-version-of-angelist-v2.md">Microverse</a> for the project inspiration.
+- I would also like to thank <a href="https://www.behance.net/sakwadesignstudio">Sakwa Nelson</a> for the original design idea.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
