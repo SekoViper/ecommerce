@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Home component rendering Test product component rendering on homepage 1`] = `
+exports[`Test Home component rendering Test product page component rendering 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -77,7 +77,7 @@ Object {
 }
 `;
 
-exports[`Test Home component rendering Test product page component rendering 1`] = `
+exports[`Test Home component rendering Test product rendering on homepage 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
