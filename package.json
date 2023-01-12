@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open --host",
+    "preview": "vite preview",
     "build": "vite build",
-    "test": "react-scripts test",
-    "preview": "vite preview"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -22,7 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
-    "react-ionicons": "^4.2.0",
+    "react-ionicons": "^1.4.6",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.1",
     "vite": "^4.0.0"
