@@ -5,10 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open --host",
-    "preview": "vite preview"
-    ,
-    "build": "vite build"
-    ,
+    "preview": "vite preview",
+    "build": "vite build",
     "test": "react-scripts test"
   }
   ,
