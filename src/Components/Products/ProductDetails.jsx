@@ -15,7 +15,7 @@ const ProductDetails = () => {
           {' '}
         </NavLink>
       </div>
-      <div className="lg:flex p-5">
+      <div className="lg:flex p-5 bg-white rounded-lg mt-5">
         <div>
           <img src={product.image} alt={product.title} />
         </div>
