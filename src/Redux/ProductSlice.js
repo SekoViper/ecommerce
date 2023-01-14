@@ -29,7 +29,8 @@ export const productSlice = createSlice({
     searchProduct: (state, action) => ({
       ...state,
       filteredProduct: state.products.filter(
-        (product) => product.title.toLowerCase().includes(action.payload),
+        (product) => product.title.includes(action.payload)
+          || product.category.includes(action.payload),
       ),
     }),
   },

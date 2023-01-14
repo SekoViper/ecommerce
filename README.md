@@ -153,10 +153,12 @@ npm start
 
 To run tests, run the following command:
 
-
-
 ```sh
   npm test
+  
+  <p>if you you happen to get this error => react script is not recognized as an internal or external command, operable program or batch file run the command below </p>
+
+  npm install react-scripts --save
 ```
 
 ### Deployment
