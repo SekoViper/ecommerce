@@ -12,7 +12,7 @@ const Women = () => {
         {' '}
         {womenClothing.length}
       </h1>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 col-desktop">
         {womenClothing.map((product) => (
           <div key={product.id} className="basis-1/4 bg-white m-1 rounded-lg flex flex justify-center flex-col text-center items-center p-2 cursor-pointer hover:border border-gray-700">
             <NavLink to={`/product/${product.id}`} state={product}>

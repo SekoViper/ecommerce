@@ -36,11 +36,11 @@ const Header = () => {
             ) : <p className="pt-2.5"><FiMenu /></p>}
           </button>
 
-          <ul className={`md:flex h-screen justify-center text-xl text-center items-center md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[9] left-0 w-full md:w-auto md:pl-0 p-9 transition-all lg:hidden duration-500 ease-in ${show ? 'top-0 ' : 'top-[-990px]'}`}>
-            <NavLink onClick={() => setShow(!show)} className="block mt-5" to="/Jewelery">Jewelries</NavLink>
-            <NavLink onClick={() => setShow(!show)} className="block mt-5" to="/men">Men</NavLink>
-            <NavLink onClick={() => setShow(!show)} className="block mt-5" to="/Women">Women</NavLink>
-            <NavLink onClick={() => setShow(!show)} className="block mt-5" to="/Electronics">Electronics</NavLink>
+          <ul className={`flex h-screen justify-center flex-col w-screen text-xl text-center items-center items-center pb-0 pb-12 absolute static bg-white z-auto z-[9] left-0 w-full w-auto pl-0 p-9 transition-all duration-500 ease-in ${show ? 'top-0 ' : 'top-[-990px]'}`}>
+            <NavLink onClick={() => setShow(!show)} className="mt-4 uppercase" to="/Jewelery">Jewelries</NavLink>
+            <NavLink onClick={() => setShow(!show)} className="mt-4 uppercase" to="/men">Men</NavLink>
+            <NavLink onClick={() => setShow(!show)} className="mt-4 uppercase" to="/Women">Women</NavLink>
+            <NavLink onClick={() => setShow(!show)} className="mt-4 uppercase" to="/Electronics">Electronics</NavLink>
           </ul>
         </nav>
       </div>
