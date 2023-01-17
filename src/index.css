@@ -7,3 +7,10 @@
 body {
   font-family: 'lato', sans-serif;
 }
+
+@media (min-width: 992px) { 
+  .col-desktop {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr)
+  }
+}
