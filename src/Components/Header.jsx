@@ -36,7 +36,7 @@ const Header = () => {
             ) : <p className="pt-2.5"><FiMenu /></p>}
           </button>
 
-          <ul className={`flex h-screen justify-center flex-col w-screen text-xl text-center items-center items-center pb-0 pb-12 absolute static bg-white z-auto z-[9] left-0 w-full w-auto pl-0 p-9 transition-all duration-500 ease-in ${show ? 'top-0 ' : 'top-[-990px]'}`}>
+          <ul className={`flex h-screen justify-center flex-col w-screen text-xl text-center items-center items-center pb-0 pb-12 absolute static bg-white z-auto z-[9] left-0 pl-0 p-9 transition-all duration-500 ease-in ${show ? 'top-0 ' : 'top-[-990px]'}`}>
             <NavLink onClick={() => setShow(!show)} className="mt-4 uppercase" to="/Jewelery">Jewelries</NavLink>
             <NavLink onClick={() => setShow(!show)} className="mt-4 uppercase" to="/men">Men</NavLink>
             <NavLink onClick={() => setShow(!show)} className="mt-4 uppercase" to="/Women">Women</NavLink>
