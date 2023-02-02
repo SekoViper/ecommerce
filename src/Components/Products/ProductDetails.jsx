@@ -1,10 +1,13 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { FcPrevious } from 'react-icons/fc';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Redux/ProductSlice';
 
 const ProductDetails = () => {
   const location = useLocation();
   const product = location.state;
+  const dispatch = useDispatch();
 
   return (
     <div className="mx-5">
@@ -29,7 +32,15 @@ const ProductDetails = () => {
             .00
           </p>
           <p>{product.description}</p>
-          <button type="button" className="rounded-none bg-green-700 px-2 py-1 my-3 uppercase font-bold text-white">Add To Cart</button>
+          <button
+            onClick={() => dispatch(addToCart(
+              product.id,
+            ))}
+            type="button"
+            className="rounded-none bg-green-700 px-2 py-1 my-3 uppercase font-bold text-white"
+          >
+            Add To Cart
+          </button>
         </div>
       </div>
 

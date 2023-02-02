@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CartPage from './Components/CartPage';
 
 import Header from './Components/Header';
 import Electronics from './Components/Products/Categories/Electronics';
@@ -19,6 +20,7 @@ function App() {
         <Route element={<Men />} path="/men" />
         <Route element={<Women />} path="/women" />
         <Route element={<Electronics />} path="/electronics" />
+        <Route element={<CartPage />} path="/cart" />
       </Routes>
     </Router>
   );

@@ -33,6 +33,32 @@ export const productSlice = createSlice({
           || product.category.includes(action.payload),
       ),
     }),
+    addToCart: (state, action) => {
+      const itemInCart = state.products.find((item) => item.id === action.payload);
+      console.log('add to cart', itemInCart);
+      if (itemInCart) {
+        itemInCart.quantity += 1;
+      } else {
+        state.products.push({ ...action.payload, quantity: 1 });
+      }
+    },
+    incrementQuantity: (state, action) => {
+      const item = state.products.find((item) => item.id === action.payload);
+      item.quantity += 1;
+      console.log('increament quantity', item.quantity += 1);
+    },
+    decrementQuantity: (state, action) => {
+      const item = state.products.find((item) => item.id === action.payload);
+      if (item.quantity === 1) {
+        item.quantity = 1;
+      } else {
+        item.quantity -= 1;
+      }
+    },
+    removeItem: (state, action) => {
+      const removeItem = state.cart.filter((item) => item.id !== action.payload);
+      state.cart = removeItem;
+    },
   },
 
   extraReducers(builder) {
@@ -44,6 +70,7 @@ export const productSlice = createSlice({
         state.status = 'Succeeded';
         state.products = [...action.payload];
         state.filteredProduct = [...action.payload];
+        state.cart = [...action.payload];
       })
       .addCase(getProductsData.rejected, (state, action) => {
         state.status = 'Failed';
@@ -52,6 +79,12 @@ export const productSlice = createSlice({
   },
 });
 
-export const { searchProduct } = productSlice.actions;
+export const {
+  searchProduct,
+  addToCart,
+  incrementQuantity,
+  decrementQuantity,
+  removeItem,
+} = productSlice.actions;
 
 export default productSlice.reducer;

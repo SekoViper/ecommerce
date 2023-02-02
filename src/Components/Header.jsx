@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { GrClose } from 'react-icons/gr';
 import { FiMenu } from 'react-icons/fi';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { searchProduct } from '../Redux/ProductSlice';
 
 const Header = () => {
   const dispatch = useDispatch(searchProduct);
   const [show, setShow] = useState(false);
+
+  const products = useSelector((state) => state.products.products);
+
+  const getTotalQuantity = () => {
+    let total = 0;
+    products.forEach((product) => {
+      total += product.quantity;
+    });
+    return total;
+  };
+
   return (
     <>
       <div className="m-8 flex justify-between items-center">
@@ -27,6 +38,10 @@ const Header = () => {
             </div>
           </div>
         </form>
+        <NavLink to="/cart">
+          Cart
+          <p>{getTotalQuantity() || 0}</p>
+        </NavLink>
         <nav className="justify-between items-center ml-5">
           <button type="button" onClick={() => setShow(!show)} className="text-3xl z-[10] absolute right-8 top-6 cursor-pointer">
             {show ? (
