@@ -11,6 +11,10 @@
   },
   "eslintConfig": {},
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.7",
     "@reduxjs/toolkit": "^1.9.1",
     "@vitejs/plugin-react": "^3.0.0",
     "axios": "^1.2.2",
