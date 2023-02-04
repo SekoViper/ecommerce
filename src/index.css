@@ -10,7 +10,6 @@ body {
 
 .shopping-cart {
   background-color: black;
-  position: relative;
   padding: 25px;
   border-radius: 100px;
   position: fixed;
@@ -19,14 +18,14 @@ body {
   z-index: 1;
 }
 
-.shopping-cart > p{
+.shopping-cart > p {
   padding: 4px 8px;
   border-radius: 50px;
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
   .col-desktop {
     display: grid;
-    grid-template-columns: repeat(5, 1fr)
+    grid-template-columns: repeat(5, 1fr);
   }
 }
