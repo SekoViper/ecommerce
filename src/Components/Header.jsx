@@ -8,6 +8,7 @@ import { searchProduct } from '../Redux/ProductSlice';
 const Header = () => {
   const dispatch = useDispatch(searchProduct);
   const [show, setShow] = useState(false);
+
   return (
     <>
       <div className="m-8 flex justify-between items-center">

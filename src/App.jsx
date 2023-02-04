@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CartIcon from './Components/CartIcon';
+import CartPage from './Components/CartPage';
 
 import Header from './Components/Header';
 import Electronics from './Components/Products/Categories/Electronics';
@@ -12,6 +14,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <CartIcon />
       <Routes>
         <Route element={<ProductsPage />} path="/" />
         <Route element={<ProductDetails />} path="/product/:productId" />
@@ -19,6 +22,7 @@ function App() {
         <Route element={<Men />} path="/men" />
         <Route element={<Women />} path="/women" />
         <Route element={<Electronics />} path="/electronics" />
+        <Route element={<CartPage />} path="/cart" />
       </Routes>
     </Router>
   );

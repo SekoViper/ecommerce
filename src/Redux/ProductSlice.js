@@ -6,8 +6,10 @@ const PRODUCT_API_URL = 'https://fakestoreapi.com/products';
 const initialState = {
   products: [],
   filteredProduct: [],
+  cart: [],
   status: 'idle',
   error: null,
+  quantity: 34,
 };
 
 // create the thunk
@@ -33,6 +35,31 @@ export const productSlice = createSlice({
           || product.category.includes(action.payload),
       ),
     }),
+    addToCart: (state, action) => {
+      const itemIndex = state.cart.findIndex((item) => item.id === action.payload);
+      if (itemIndex !== -1) {
+        state.cart[itemIndex].quantity += 1;
+      } else {
+        state.cart.push({ ...action.payload, quantity: 1 });
+      }
+    },
+    incrementQuantity: (state, action) => {
+      const item = state.cart.find((item) => item.id === action.payload);
+      item.quantity += 1;
+      console.log('increment quantity', item.quantity += 1);
+    },
+    decrementQuantity: (state, action) => {
+      const item = state.cart.find((item) => item.id === action.payload);
+      if (item.quantity === 1) {
+        item.quantity = 1;
+      } else {
+        item.quantity -= 1;
+      }
+    },
+    removeItem: (state, action) => {
+      const removeItem = state.cart.filter((item) => item.id !== action.payload);
+      state.cart = removeItem;
+    },
   },
 
   extraReducers(builder) {
@@ -52,6 +79,12 @@ export const productSlice = createSlice({
   },
 });
 
-export const { searchProduct } = productSlice.actions;
+export const {
+  searchProduct,
+  addToCart,
+  incrementQuantity,
+  decrementQuantity,
+  removeItem,
+} = productSlice.actions;
 
 export default productSlice.reducer;

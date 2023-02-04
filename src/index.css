@@ -8,9 +8,24 @@ body {
   font-family: 'lato', sans-serif;
 }
 
-@media (min-width: 992px) { 
+.shopping-cart {
+  background-color: black;
+  padding: 25px;
+  border-radius: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 10%;
+  z-index: 1;
+}
+
+.shopping-cart > p {
+  padding: 4px 8px;
+  border-radius: 50px;
+}
+
+@media (min-width: 992px) {
   .col-desktop {
     display: grid;
-    grid-template-columns: repeat(5, 1fr)
+    grid-template-columns: repeat(5, 1fr);
   }
 }
