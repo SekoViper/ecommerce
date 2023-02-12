@@ -18,7 +18,7 @@ const Men = () => {
             <NavLink to={`/product/${product.id}`} state={product}>
               <img
                 className="object-contain w-[200px] aspect-square object-contain"
-                src={product.image}
+                src={product.img}
                 alt="picture1"
               />
               <div className="mt-4 flex flex-col items-center">
