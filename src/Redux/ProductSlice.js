@@ -22,6 +22,26 @@ export const getProductsData = createAsyncThunk(
   },
 );
 
+// Load cart data from localStorage
+const loadCartFromLocalStorage = () => {
+  try {
+    const cartData = localStorage.getItem('cart');
+    return cartData ? JSON.parse(cartData) : [];
+  } catch (error) {
+    console.error('Error loading cart from localStorage:', error);
+    return [];
+  }
+};
+
+// Save cart data to localStorage
+const saveCartToLocalStorage = (cart) => {
+  try {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  } catch (error) {
+    console.error('Error saving cart to localStorage:', error);
+  }
+};
+
 // handle actions in reducers:
 export const productSlice = createSlice({
   name: 'products',
@@ -35,6 +55,11 @@ export const productSlice = createSlice({
           || product.category.includes(action.payload),
       ),
     }),
+    // Add a new action to update the cart state and persist it to localStorage
+    updateCart: (state, action) => {
+      state.cart = action.payload;
+      saveCartToLocalStorage(action.payload);
+    },
     addToCart: (state, action) => {
       const itemIndex = state.cart.findIndex((item) => item.id === action.payload);
       if (itemIndex !== -1) {
@@ -75,16 +100,26 @@ export const productSlice = createSlice({
       .addCase(getProductsData.rejected, (state, action) => {
         state.status = 'Failed';
         state.error = action.error.message;
+      })
+      // Add a case to load cart data from localStorage on initial state
+      .addDefaultCase((state) => {
+        state.cart = loadCartFromLocalStorage();
       });
   },
 });
 
+// export const {
+//   searchProduct,
+//   addToCart,
+//   incrementQuantity,
+//   decrementQuantity,
+//   removeItem,
+// } = productSlice.actions;
+
+// export default productSlice.reducer;
+
 export const {
-  searchProduct,
-  addToCart,
-  incrementQuantity,
-  decrementQuantity,
-  removeItem,
+  searchProduct, addToCart, incrementQuantity, decrementQuantity, removeItem, updateCart,
 } = productSlice.actions;
 
 export default productSlice.reducer;
