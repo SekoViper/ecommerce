@@ -22,7 +22,6 @@ export const getProductsData = createAsyncThunk(
   },
 );
 
-
 // Load cart data from localStorage
 const loadCartFromLocalStorage = () => {
   try {
@@ -104,8 +103,8 @@ export const productSlice = createSlice({
       })
       // Add a case to load cart data from localStorage on initial state
       .addDefaultCase((state) => {
-      state.cart = loadCartFromLocalStorage();
-    });
+        state.cart = loadCartFromLocalStorage();
+      });
   },
 });
 
@@ -119,7 +118,8 @@ export const productSlice = createSlice({
 
 // export default productSlice.reducer;
 
-export const { searchProduct, addToCart, incrementQuantity, decrementQuantity, removeItem, updateCart } =
-  productSlice.actions;
+export const {
+  searchProduct, addToCart, incrementQuantity, decrementQuantity, removeItem, updateCart,
+} = productSlice.actions;
 
 export default productSlice.reducer;
